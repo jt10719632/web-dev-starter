@@ -106,3 +106,59 @@ let secretCode1 = getSecretCode(2);
 console.log(secretCode1);
 
 changePercentOff(30);
+
+let mySymbol = Symbol();
+
+person = { 
+    name: "John",
+    age: 32,
+    partTime: false,
+    [mySymbol]: 'secretInformation',
+    showInfo: function() {
+        showMessage(this.name + ' is ' + this.age);
+    }
+};
+
+console.log(person.age);
+console.log(person.name);
+console.log(person.partTime);
+// console.log(person.mySymbol);
+
+person.showInfo();
+
+// We are passing an object to this function. We can change properties and methods when we pass the object through.
+function incrementAge(person) {
+    person.age++;
+}
+
+showMessage(person.age);
+incrementAge(person);
+showMessage(person.age);
+
+let now = new Date();
+showMessage( now.toDateString());
+
+let s = 'Hello';
+// Displays the character at the position
+showMessage (s.charAt(0));
+
+const header = document.getElementById('message');
+
+header.style.fontWeight = '1000';
+
+const button = document.getElementById('see-review');
+
+button.addEventListener('click', function() {
+    console.log('click');
+    const review = document.getElementById('review');
+
+    if (review.classList.contains('d-none')) {
+        review.classList.remove('d-none');
+        button.textContent = 'Close Review';
+    }
+    else {
+        review.classList.add('d-none');
+        button.textContent = 'See Review';
+    }
+
+})
