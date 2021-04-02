@@ -87,3 +87,22 @@ do {
     console.log(count);
     count++;
 } while (count < 1);
+
+logMessage();
+fn();
+
+paramFunction(getSecretCode(2));
+
+paramFunction('Hello', 'John');
+// If you don't pass in all the parameters, all missing parameters will be set to undefined.
+paramFunction('Hello');
+
+let secretCode = getSecretCode(2);
+console.log(secretCode);
+
+
+
+let secretCode1 = getSecretCode(2);
+console.log(secretCode1);
+
+changePercentOff(30);
