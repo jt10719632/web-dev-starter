@@ -161,4 +161,88 @@ button.addEventListener('click', function() {
         button.textContent = 'See Review';
     }
 
-})
+});
+
+// ARRAYS
+const values = ['a', 'b', 'c'];
+console.log(values);
+// An array is an object.
+console.log("typeof: " + typeof values);
+// 
+console.log("isArray: " + Array.isArray(values));
+
+// Looping through array
+for (let i=0; i < values.length; i++) {
+    console.log(values[i]);
+};
+
+values[0] = 'aaa';
+
+console.log(values); 
+
+// push()
+// Appends values into array
+values.push('d');
+console.log(values);
+
+// pop()
+// removes the last value in the array
+const last = values.pop();
+console.log("pop: " + last); 
+console.log(values);
+ 
+// shift()
+// shifts array to the left one element
+const first = values.shift();
+console.log(first);
+console.log("shift: " + values);
+
+// unshift()
+// Appends element to the beginning of array
+values.unshift('test');
+console.log("unshift: " + values);
+
+// slice()
+// creates a brand new array (start, stop)
+// old array still is the same even though we sliced it
+const newValues = values.slice(1,2);
+console.log(newValues);
+
+// splice()
+// removes elements from the array (start, deleteCount)
+values.splice(1, 1);
+console.log(values);
+
+// splicing can also be used for inserting. Specify 0 not delete but append the following values after the index
+// if you specify 1 for the delete count then it will delete that element and add the one you want in that position
+values.splice(1, 0, 'spliceInsert');
+console.log(values);
+
+// ARRAY SEARCHING
+const values1 = ['a', 'b', 'c', 'd', 'e', 'f', 'ggg', 'hhh'];
+console.log("indexOf: 'c' is " + values1.indexOf('c'));
+
+
+// Finds all elements that meets the functions requirements
+const set = values1.filter(function(item) {
+    return item > 'b';
+});
+console.log(set);
+
+// Finds the first element that meets the functions requirements
+const set1 = values1.find(function(item) {
+    return item.length > 1;
+});
+console.log(set1);
+
+// forEach
+// Every element in this array will go through this function
+values1.forEach(function(item) {
+    console.log(item);
+});
+
+// Return all elements that have a certain class name
+const containers = document.getElementsByClassName('container');
+console.log(containers);
+
+containers[0].classList.add('d-none');

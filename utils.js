@@ -41,3 +41,4 @@ function getSecretCode(value) {
 function changePercentOff(percent) {
     document.getElementById('percent-off').textContent = percent + "% OFF";
 }
+
